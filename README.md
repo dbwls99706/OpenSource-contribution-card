@@ -127,13 +127,20 @@ Include or exclude specific organizations:
 
 ## Themes
 
-| Theme | Description |
-|-------|-------------|
-| `light` | Light background, green accent (default) |
-| `dark` | Dark background, lime accent |
-| `nord` | Nord color palette |
-| `dracula` | Dracula color palette |
-| `tokyo` | Tokyo Night color palette |
+### Light (default)
+![Light Theme](./contributions-light.svg)
+
+### Dark
+![Dark Theme](./contributions-dark.svg)
+
+### Nord
+![Nord Theme](./contributions-nord.svg)
+
+### Dracula
+![Dracula Theme](./contributions-dracula.svg)
+
+### Tokyo Night
+![Tokyo Night Theme](./contributions-tokyo.svg)
 
 ---
 

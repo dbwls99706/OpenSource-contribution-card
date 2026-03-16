@@ -125,13 +125,20 @@ GitHub 라이트/다크 모드에 따라 자동으로 색상이 전환됩니다:
 
 ## Themes
 
-| Theme | Description |
-|-------|-------------|
-| `light` | 밝은 배경, 초록 액센트 (기본값) |
-| `dark` | 어두운 배경, 연두 액센트 |
-| `nord` | Nord 컬러 팔레트 |
-| `dracula` | Dracula 컬러 팔레트 |
-| `tokyo` | Tokyo Night 컬러 팔레트 |
+### Light (기본값)
+![Light Theme](./contributions-light.svg)
+
+### Dark
+![Dark Theme](./contributions-dark.svg)
+
+### Nord
+![Nord Theme](./contributions-nord.svg)
+
+### Dracula
+![Dracula Theme](./contributions-dracula.svg)
+
+### Tokyo Night
+![Tokyo Night Theme](./contributions-tokyo.svg)
 
 ---
 
