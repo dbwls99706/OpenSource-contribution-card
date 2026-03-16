@@ -11,6 +11,7 @@
       }
       .card-0 { animation-delay: 0s; }
       .card-1 { animation-delay: 0.1s; }
+      
     </style>
   
   
@@ -30,7 +31,13 @@
       <g transform="translate(0, 26)">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="#73daca"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
         <text x="20" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#73daca">
-          2 PRs Merged
+          2 PRs Merged · 2 Repos
+        </text>
+      </g>
+      <g transform="translate(364, 5)">
+        <rect width="80" height="24" rx="12" fill="#73daca"/>
+        <text x="40" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#1a1b26" text-anchor="middle">
+          Score: 60
         </text>
       </g>
     </g>
@@ -40,10 +47,15 @@
         <!-- Card Background -->
         <rect width="205" height="95" rx="12" fill="#24283b"/>
 
-        <!-- GitHub Icon -->
+        <!-- Repo Icon -->
         <g transform="translate(14, 14)">
+          <defs>
+            <clipPath id="circleView-0">
+              <circle cx="14" cy="14" r="14"/>
+            </clipPath>
+          </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <svg x="6" y="6" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-0)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
@@ -59,16 +71,16 @@
           Fix: deadlock when cal...
         </text>
 
-        <!-- Merged Badge -->
+        <!-- Contribution Type Badge -->
         <g transform="translate(14, 70)">
-          <rect width="58" height="18" rx="4" fill="#73daca"/>
-          <text x="29" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#1a1b26" text-anchor="middle">
-            Merged
+          <rect width="65" height="18" rx="4" fill="#73daca"/>
+          <text x="32.5" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1a1b26" text-anchor="middle">
+            Bug Fix
           </text>
         </g>
 
         <!-- Date -->
-        <g transform="translate(80, 70)">
+        <g transform="translate(85, 70)">
           <svg width="12" height="12" viewBox="0 0 20 20" fill="#73daca"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
           <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
             Oct 3, 2025
@@ -80,10 +92,15 @@
         <!-- Card Background -->
         <rect width="205" height="95" rx="12" fill="#24283b"/>
 
-        <!-- GitHub Icon -->
+        <!-- Repo Icon -->
         <g transform="translate(14, 14)">
+          <defs>
+            <clipPath id="circleView-1">
+              <circle cx="14" cy="14" r="14"/>
+            </clipPath>
+          </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <svg x="6" y="6" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-1)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
@@ -99,16 +116,16 @@
           Fix: Add null pointer ...
         </text>
 
-        <!-- Merged Badge -->
+        <!-- Contribution Type Badge -->
         <g transform="translate(14, 70)">
-          <rect width="58" height="18" rx="4" fill="#73daca"/>
-          <text x="29" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" fill="#1a1b26" text-anchor="middle">
-            Merged
+          <rect width="65" height="18" rx="4" fill="#73daca"/>
+          <text x="32.5" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1a1b26" text-anchor="middle">
+            Bug Fix
           </text>
         </g>
 
         <!-- Date -->
-        <g transform="translate(80, 70)">
+        <g transform="translate(85, 70)">
           <svg width="12" height="12" viewBox="0 0 20 20" fill="#73daca"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
           <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
             Aug 14, 2025
