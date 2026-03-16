@@ -1,4 +1,4 @@
-<svg width="480" height="189" viewBox="0 0 480 189" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="296" viewBox="0 0 480 296" xmlns="http://www.w3.org/2000/svg">
   
     <style>
       @keyframes fadeIn {
@@ -11,6 +11,7 @@
       }
       .card-0 { animation-delay: 0s; }
       .card-1 { animation-delay: 0.1s; }
+      .card-2 { animation-delay: 0.2s; }
       
     </style>
   
@@ -21,7 +22,7 @@
         <stop offset="100%" style="stop-color:#44475a"/>
       </linearGradient>
     </defs>
-    <rect width="480" height="189" fill="url(#bgGrad)" rx="16"/>
+    <rect width="480" height="296" fill="url(#bgGrad)" rx="16"/>
   
   
     <g transform="translate(18, 23)">
@@ -31,13 +32,13 @@
       <g transform="translate(0, 26)">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="#50fa7b"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
         <text x="20" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#50fa7b">
-          2 PRs Merged · 2 Repos
+          3 PRs Merged · 3 Repos
         </text>
       </g>
       <g transform="translate(364, 5)">
         <rect width="80" height="24" rx="12" fill="#50fa7b"/>
         <text x="40" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#282a36" text-anchor="middle">
-          Score: 60
+          Score: 90
         </text>
       </g>
     </g>
@@ -56,6 +57,51 @@
           </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
           <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-0)"/>
+        </g>
+
+        <!-- Repo Name & PR Number -->
+        <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f8f8f2">
+          ros2/rclcpp
+        </text>
+        <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#8be9fd">
+          #3047
+        </text>
+
+        <!-- PR Title -->
+        <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#bd93f9">
+          Add library dependency...
+        </text>
+
+        <!-- Contribution Type Badge -->
+        <g transform="translate(14, 70)">
+          <rect width="65" height="18" rx="4" fill="#50fa7b"/>
+          <text x="32.5" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#282a36" text-anchor="middle">
+            Merged
+          </text>
+        </g>
+
+        <!-- Date -->
+        <g transform="translate(85, 70)">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="#50fa7b"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+          <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#6272a4">
+            Feb 2, 2026
+          </text>
+        </g>
+      </g>
+    
+      <g transform="translate(235, 76)" class="card card-1">
+        <!-- Card Background -->
+        <rect width="205" height="95" rx="12" fill="#44475a"/>
+
+        <!-- Repo Icon -->
+        <g transform="translate(14, 14)">
+          <defs>
+            <clipPath id="circleView-1">
+              <circle cx="14" cy="14" r="14"/>
+            </clipPath>
+          </defs>
+          <circle cx="14" cy="14" r="14" fill="#2d3348"/>
+          <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-1)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
@@ -88,19 +134,19 @@
         </g>
       </g>
     
-      <g transform="translate(235, 76)" class="card card-1">
+      <g transform="translate(18, 183)" class="card card-2">
         <!-- Card Background -->
         <rect width="205" height="95" rx="12" fill="#44475a"/>
 
         <!-- Repo Icon -->
         <g transform="translate(14, 14)">
           <defs>
-            <clipPath id="circleView-1">
+            <clipPath id="circleView-2">
               <circle cx="14" cy="14" r="14"/>
             </clipPath>
           </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-1)"/>
+          <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" x="0" y="0" width="28" height="28" clip-path="url(#circleView-2)"/>
         </g>
 
         <!-- Repo Name & PR Number -->

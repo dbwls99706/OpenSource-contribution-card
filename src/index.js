@@ -19,9 +19,25 @@ function getMockData(username) {
   const sampleBase64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
   return {
     username,
-    totalPRs: 2,
-    totalRepos: 2,
+    totalPRs: 3,
+    totalRepos: 3,
     contributions: [
+      {
+        name: 'ros2/rclcpp',
+        owner: 'ros2',
+        avatarUrl: 'https://github.com/ros2.png?size=40',
+        avatarBase64: sampleBase64,
+        prs: [
+          {
+            number: 3047,
+            title: 'Add library dependency to node executable in rclcpp_components_register_node',
+            url: 'https://github.com/ros2/rclcpp/pull/3047',
+            mergedAt: '2026-02-02T12:00:00Z',
+            labels: []
+          }
+        ],
+        latestMerge: '2026-02-02T12:00:00Z'
+      },
       {
         name: 'ros2/rclpy',
         owner: 'ros2',
