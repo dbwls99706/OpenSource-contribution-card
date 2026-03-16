@@ -2,9 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-GitHub 프로필 README에 **외부 오픈소스 기여 내역**을 자동으로 표시하는 위젯입니다.
+A widget that automatically displays your **external open-source contributions** on your GitHub profile README.
 
-자신의 레포가 아닌, 다른 프로젝트에 **merge된 PR**만 표시합니다.
+Only shows **merged PRs** to projects you don't own.
+
+> [한국어 README](./README.ko.md)
 
 ## Preview
 
@@ -14,26 +16,26 @@ GitHub 프로필 README에 **외부 오픈소스 기여 내역**을 자동으로
 
 ## Features
 
-- **외부 기여만 표시** - 자신의 레포 제외, 다른 프로젝트에 merge된 PR만
-- **자동 업데이트** - GitHub Actions로 매일 자동 갱신
-- **5가지 테마** - `light`, `dark`, `nord`, `dracula`, `tokyo`
-- **자동 테마 감지** - GitHub 라이트/다크 모드에 따라 자동 색상 전환
-- **PR 번호 표시** - 각 카드에 PR 번호 표시 (예: #1492)
-- **정렬 옵션** - 날짜순 또는 PR 수 기준 정렬
-- **날짜 필터** - 최근 N개월 기여만 표시 가능
-- **org 필터** - 특정 organization만 포함하거나 제외 가능
-- **OSS Score** - 오픈소스 기여도를 점수로 표시
-- **기여 유형 자동 분류** - PR 라벨 기반으로 Bug Fix, Feature, Docs 등 자동 표시
-- **레포지토리 아이콘** - 각 카드에 레포 오너의 아바타 표시
-- **Featured PRs** - 노출할 PR을 수동으로 선택 가능
+- **External contributions only** - Excludes your own repos, shows only merged PRs to other projects
+- **Auto-update** - Automatically refreshed daily via GitHub Actions
+- **5 themes** - `light`, `dark`, `nord`, `dracula`, `tokyo`
+- **Auto theme detection** - Automatically switches colors based on GitHub light/dark mode
+- **PR numbers** - Each card displays the PR number (e.g., #1492)
+- **Sort options** - Sort by date or PR count
+- **Date filter** - Show only contributions from the last N months
+- **Org filter** - Include or exclude specific organizations
+- **OSS Score** - Quantified open-source contribution score
+- **Auto contribution type** - Automatically classifies Bug Fix, Feature, Docs, etc. based on PR labels
+- **Repository icons** - Displays the repo owner's avatar on each card
+- **Featured PRs** - Manually select which PRs to showcase
 
 ---
 
 ## Quick Start
 
-### Step 1: 파일 복사
+### Step 1: Copy files
 
-자신의 프로필 레포지토리 (`username/username`)에 다음 파일들을 복사합니다:
+Copy the following files to your profile repository (`username/username`):
 
 ```
 your-username/
@@ -45,20 +47,20 @@ your-username/
 │   ├── fetch-contributions.js
 │   └── generate-svg.js
 ├── package.json
-└── README.md (프로필 README)
+└── README.md (profile README)
 ```
 
-### Step 2: Actions 권한 설정
+### Step 2: Set Actions permissions
 
-레포지토리 **Settings** → **Actions** → **General**:
+Go to repository **Settings** → **Actions** → **General**:
 
-1. **Workflow permissions** 섹션에서
-2. **"Read and write permissions"** 선택
-3. **Save** 클릭
+1. Find the **Workflow permissions** section
+2. Select **"Read and write permissions"**
+3. Click **Save**
 
-### Step 3: README에 이미지 추가
+### Step 3: Add image to README
 
-프로필 `README.md`에 다음을 추가:
+Add the following to your profile `README.md`:
 
 ```markdown
 ## Open Source Contributions
@@ -66,60 +68,60 @@ your-username/
 ![My Contributions](./contributions.svg)
 ```
 
-### Step 4: 실행
+### Step 4: Run
 
-**자동 실행:** 하루 3번 자동 업데이트 (한국시간 09:00, 17:00, 01:00)
+**Automatic:** Updates 3 times a day (09:00, 17:00, 01:00 KST)
 
-**수동 실행:**
-1. **Actions** 탭 → **Update Contributions SVG**
-2. **Run workflow** 클릭
+**Manual:**
+1. Go to **Actions** tab → **Update Contributions SVG**
+2. Click **Run workflow**
 
 ---
 
 ## Configuration
 
-레포지토리 **Settings** → **Secrets and variables** → **Actions** → **Variables** 탭에서 설정:
+Set variables in repository **Settings** → **Secrets and variables** → **Actions** → **Variables** tab:
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `THEME` | 테마 (`light`, `dark`, `nord`, `dracula`, `tokyo`) | `light` |
-| `AUTO_THEME` | GitHub 테마 자동 감지 (`true`/`false`) | `false` |
-| `MAX_REPOS` | 표시할 최대 PR 수 (1-10) | `6` |
-| `TITLE` | 커스텀 타이틀 | `Open-Source Contributions` |
-| `SORT_BY` | 정렬 기준 (`date`: 최신순, `count`: PR 많은 순) | `date` |
-| `MONTHS_AGO` | 최근 N개월만 표시 (예: `6`) | 전체 |
-| `EXCLUDE_ORGS` | 제외할 org/user (쉼표 구분) | - |
-| `INCLUDE_ORGS` | 포함할 org/user만 표시 (쉼표 구분) | 전체 |
-| `FEATURED_PRS_PATH` | Featured PRs 설정 파일 경로 | `./featured-prs.json` |
+| `THEME` | Theme (`light`, `dark`, `nord`, `dracula`, `tokyo`) | `light` |
+| `AUTO_THEME` | Auto-detect GitHub theme (`true`/`false`) | `false` |
+| `MAX_REPOS` | Maximum number of PRs to display (1-10) | `6` |
+| `TITLE` | Custom title | `Open-Source Contributions` |
+| `SORT_BY` | Sort order (`date`: newest first, `count`: most PRs first) | `date` |
+| `MONTHS_AGO` | Show only last N months (e.g., `6`) | All |
+| `EXCLUDE_ORGS` | Orgs/users to exclude (comma-separated) | - |
+| `INCLUDE_ORGS` | Show only these orgs/users (comma-separated) | All |
+| `FEATURED_PRS_PATH` | Path to Featured PRs config file | `./featured-prs.json` |
 
-### 설정 예시
+### Examples
 
-**자동 테마 감지 (권장):**
+**Auto theme detection (recommended):**
 
-GitHub 라이트/다크 모드에 따라 자동으로 색상이 전환됩니다:
+Automatically switches colors based on GitHub light/dark mode:
 
 1. **Settings** → **Secrets and variables** → **Actions** → **Variables**
-2. **New repository variable** 클릭
+2. Click **New repository variable**
 3. Name: `AUTO_THEME`, Value: `true`
 
-> 💡 `AUTO_THEME=true`를 사용하면 `THEME` 설정은 무시됩니다.
+> When `AUTO_THEME=true` is set, the `THEME` setting is ignored.
 
-**다크 테마 + 최근 6개월만 표시:**
+**Dark theme + last 6 months only:**
 
 1. **Settings** → **Secrets and variables** → **Actions** → **Variables**
-2. **New repository variable** 클릭
-3. 다음 변수들 추가:
+2. Click **New repository variable**
+3. Add the following variables:
    - Name: `THEME`, Value: `dark`
    - Name: `MONTHS_AGO`, Value: `6`
 
-**특정 org/user 필터링:**
+**Org/user filtering:**
 
-특정 organization만 표시하거나 제외할 수 있습니다:
+Include or exclude specific organizations:
 
-- `INCLUDE_ORGS`: `ros2,kubernetes` → ros2, kubernetes org의 PR만 표시
-- `EXCLUDE_ORGS`: `my-company` → my-company org의 PR 제외
+- `INCLUDE_ORGS`: `ros2,kubernetes` → Show only PRs from ros2 and kubernetes orgs
+- `EXCLUDE_ORGS`: `my-company` → Exclude PRs from my-company org
 
-> 💡 `INCLUDE_ORGS`가 설정되면 해당 org만 표시되고, `EXCLUDE_ORGS`는 무시됩니다.
+> When `INCLUDE_ORGS` is set, only those orgs are shown and `EXCLUDE_ORGS` is ignored.
 
 ---
 
@@ -127,60 +129,60 @@ GitHub 라이트/다크 모드에 따라 자동으로 색상이 전환됩니다:
 
 | Theme | Description |
 |-------|-------------|
-| `light` | 밝은 배경, 초록 액센트 (기본값) |
-| `dark` | 어두운 배경, 연두 액센트 |
-| `nord` | Nord 컬러 팔레트 |
-| `dracula` | Dracula 컬러 팔레트 |
-| `tokyo` | Tokyo Night 컬러 팔레트 |
+| `light` | Light background, green accent (default) |
+| `dark` | Dark background, lime accent |
+| `nord` | Nord color palette |
+| `dracula` | Dracula color palette |
+| `tokyo` | Tokyo Night color palette |
 
 ---
 
 ## OSS Score
 
-카드 우측 상단에 표시되는 **OSS Score**는 오픈소스 기여도를 수치화한 점수입니다.
+The **OSS Score** displayed in the top-right corner of the card quantifies your open-source contribution activity.
 
-### 계산 방식
+### Calculation
 
 ```
-OSS Score = (총 Merge된 PR 수 × 10) + (기여한 레포 수 × 20)
+OSS Score = (Total Merged PRs × 10) + (Repos Contributed To × 20)
 ```
 
-| 항목 | 점수 |
-|------|------|
-| Merge된 PR 1개당 | +10점 |
-| 기여한 레포 1개당 | +20점 |
+| Item | Points |
+|------|--------|
+| Per merged PR | +10 |
+| Per repo contributed to | +20 |
 
-### 예시
+### Examples
 
-- 3개 레포에 5개 PR merge → `(5 × 10) + (3 × 20)` = **110점**
-- 1개 레포에 10개 PR merge → `(10 × 10) + (1 × 20)` = **120점**
+- 5 PRs merged across 3 repos → `(5 × 10) + (3 × 20)` = **110**
+- 10 PRs merged in 1 repo → `(10 × 10) + (1 × 20)` = **120**
 
-> 다양한 프로젝트에 기여할수록, 그리고 더 많은 PR이 merge될수록 점수가 올라갑니다.
+> The more diverse your contributions and the more PRs get merged, the higher your score.
 
 ---
 
-## 기여 유형 (Contribution Type)
+## Contribution Type
 
-각 PR 카드에는 라벨 기반으로 기여 유형이 자동 표시됩니다.
+Each PR card automatically displays a contribution type based on PR labels.
 
-| 유형 | 인식되는 라벨 |
-|------|--------------|
+| Type | Recognized Labels |
+|------|-------------------|
 | Bug Fix | `bug`, `fix` |
 | Feature | `feat`, `enhancement` |
 | Docs | `doc`, `documentation` |
 | Tests | `test` |
 | Refactor | `refactor` |
-| Merged | (라벨 없음 또는 기타) |
+| Merged | (no label or other) |
 
 ---
 
-## Featured PRs (수동 선택)
+## Featured PRs
 
-특정 PR만 카드에 노출하고 싶을 때 사용합니다.
+Use this to manually select which PRs to showcase on the card.
 
-### 설정 방법
+### Setup
 
-프로젝트 루트에 `featured-prs.json` 파일 생성:
+Create a `featured-prs.json` file in the project root:
 
 ```json
 [
@@ -189,39 +191,39 @@ OSS Score = (총 Merge된 PR 수 × 10) + (기여한 레포 수 × 20)
 ]
 ```
 
-형식: `"소유자/레포명#PR번호"`
+Format: `"owner/repo#PR-number"`
 
-### 동작
+### Behavior
 
-- 파일이 있으면 → 지정된 PR만 카드에 표시
-- 파일이 없으면 → 기존처럼 자동 표시
-- 헤더의 총 PR 수와 레포 수는 전체 기여 기준 유지
+- If the file exists → Only the specified PRs are shown on the card
+- If the file doesn't exist → PRs are displayed automatically as usual
+- The total PR count and repo count in the header are always based on all contributions
 
 ---
 
 ## Local Development
 
 ```bash
-# 클론
+# Clone
 git clone https://github.com/dbwls99706/OpenSource-contribution-card
 cd OpenSource-contribution-card
 
-# 실행 (실제 GitHub API 사용)
+# Run (uses real GitHub API)
 node src/index.js <your-username>
 
-# 테마 변경
+# Change theme
 THEME=dark node src/index.js <your-username>
 
-# 자동 테마 감지 (GitHub 라이트/다크 모드 자동 전환)
+# Auto theme detection (auto-switches for GitHub light/dark mode)
 AUTO_THEME=true node src/index.js <your-username>
 
-# 특정 org만 표시
+# Show only specific orgs
 INCLUDE_ORGS=ros2,kubernetes node src/index.js <your-username>
 
-# 특정 org 제외
+# Exclude specific orgs
 EXCLUDE_ORGS=my-company node src/index.js <your-username>
 
-# 테스트 (Mock 데이터)
+# Test (mock data)
 node src/index.js <your-username> --mock
 ```
 
@@ -230,28 +232,28 @@ node src/index.js <your-username> --mock
 ## How It Works
 
 ```
-GitHub Actions (매일 자동 실행)
+GitHub Actions (runs automatically daily)
          │
          ▼
 ┌─────────────────────────────────┐
-│  1. GitHub Search API 호출      │
-│     author:{user} type:pr       │
-│     is:merged -user:{user}      │
+│  1. Call GitHub Search API      │
+│     author:{user} type:pr      │
+│     is:merged -user:{user}     │
 └─────────────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────┐
-│  2. PR 데이터 정렬 및 필터링    │
+│  2. Sort and filter PR data    │
 └─────────────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────┐
-│  3. SVG 카드 생성               │
+│  3. Generate SVG card          │
 └─────────────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────┐
-│  4. contributions.svg 커밋      │
+│  4. Commit contributions.svg   │
 └─────────────────────────────────┘
 ```
 
@@ -259,25 +261,25 @@ GitHub Actions (매일 자동 실행)
 
 ## Limitations
 
-- GitHub README에서 SVG 내부 링크는 보안상 비활성화됨
-- PR 번호가 표시되므로 GitHub에서 직접 검색 가능
+- SVG internal links are disabled in GitHub READMEs for security reasons
+- PR numbers are displayed so you can search for them directly on GitHub
 
 ---
 
 ## Troubleshooting
 
-### SVG가 생성되지 않아요
-1. **Actions** 탭에서 워크플로우 실행 로그 확인
-2. **Settings** → **Actions** → **General**에서 권한이 "Read and write"인지 확인
+### SVG is not generated
+1. Check the workflow run logs in the **Actions** tab
+2. Verify that permissions are set to "Read and write" in **Settings** → **Actions** → **General**
 
-### 기여 내역이 안 보여요
-- 자신의 레포가 아닌 **외부 프로젝트**에 merge된 PR만 표시됩니다
-- PR이 실제로 merge되었는지 확인하세요
+### Contributions are not showing
+- Only merged PRs to **external projects** (not your own repos) are displayed
+- Make sure the PR was actually merged
 
-### 수동 실행 후 변경이 바로 안 보여요
-- GitHub는 이미지를 캐싱하기 때문에 SVG 업데이트 후 **최대 5~10분** 정도 지연될 수 있습니다
-- 강제 새로고침(Ctrl+Shift+R / Cmd+Shift+R)을 시도해보세요
-- 그래도 안 되면 잠시 기다렸다가 다시 확인해주세요
+### Changes don't appear after manual run
+- GitHub caches images, so there may be a delay of **up to 5-10 minutes** after the SVG is updated
+- Try a hard refresh (Ctrl+Shift+R / Cmd+Shift+R)
+- If it still doesn't show, wait a moment and check again
 
 ---
 
