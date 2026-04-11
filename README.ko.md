@@ -16,6 +16,7 @@ GitHub 프로필 README에 **외부 오픈소스 기여 내역**을 자동으로
 
 - **외부 기여만 표시** - 자신의 레포 제외, 다른 프로젝트에 merge된 PR만
 - **자동 업데이트** - GitHub Actions로 매일 자동 갱신
+- **Keepalive 보호** - 60일간 활동이 없어도 스케줄 워크플로우가 자동 비활성화되지 않도록 방지
 - **5가지 테마** - `light`, `dark`, `nord`, `dracula`, `tokyo`
 - **자동 테마 감지** - GitHub 라이트/다크 모드에 따라 자동 색상 전환
 - **PR 번호 표시** - 각 카드에 PR 번호 표시 (예: #1492)
@@ -285,6 +286,17 @@ GitHub Actions (매일 자동 실행)
 - GitHub는 이미지를 캐싱하기 때문에 SVG 업데이트 후 **최대 5~10분** 정도 지연될 수 있습니다
 - 강제 새로고침(Ctrl+Shift+R / Cmd+Shift+R)을 시도해보세요
 - 그래도 안 되면 잠시 기다렸다가 다시 확인해주세요
+
+### 60일 후 워크플로우가 자동 비활성화됐어요
+
+GitHub는 60일간 활동이 없는 레포의 스케줄 워크플로우를 자동 비활성화합니다. 이 템플릿은 약 45일마다 빈 커밋을 생성하는 keepalive 스텝을 포함하여 이를 방지하지만, keepalive 추가 이전에 이미 비활성화되었다면:
+
+1. 프로필 레포의 **Actions** 탭으로 이동
+2. 왼쪽 사이드바에서 **Update Contributions SVG** 클릭
+3. 페이지 상단의 **Enable workflow** 버튼 클릭
+4. (선택) **Run workflow**를 눌러 즉시 실행
+
+재발 방지를 위해, `.github/workflows/update-contributions.yml` 파일에 이 템플릿의 최신 `Keepalive workflow` 스텝이 포함되어 있는지 확인하세요.
 
 ---
 
