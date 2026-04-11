@@ -186,7 +186,7 @@ export function generateSVG(data, options = {}) {
     theme = 'light',
     autoTheme = false,
     maxRepos = 4,
-    width = 480,
+    width: rawWidth = 480,
     title = 'Open-Source Contributions',
     sortBy = 'date',
     monthsAgo = null,
@@ -194,6 +194,15 @@ export function generateSVG(data, options = {}) {
     hideTitle = false,
     hideBorder = false
   } = options;
+
+  // 카드 하단 badge(x=14, width=65)와 date(x=85 + icon + text)가 양쪽에서 만나
+  // 카드 내부에 들어가려면 cardWidth가 최소 ~180px 필요. 이를 역산하면 전체 width는 ~400.
+  // 그보다 작으면 한 줄에 요소들이 카드 밖으로 밀려나므로 clamp.
+  const MIN_WIDTH = 400;
+  const width = Math.max(MIN_WIDTH, rawWidth);
+  if (rawWidth < MIN_WIDTH) {
+    console.warn(`Warning: width=${rawWidth} is below minimum ${MIN_WIDTH}, clamping to ${MIN_WIDTH}`);
+  }
 
   const idPrefix = generateIdPrefix();
   const rootClass = `oss-card-${idPrefix}`;

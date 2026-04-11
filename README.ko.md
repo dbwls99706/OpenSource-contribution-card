@@ -93,7 +93,7 @@ your-username/
 | `INCLUDE_ORGS` | 포함할 org/user만 표시 (쉼표 구분) | 전체 |
 | `FEATURED_PRS_PATH` | Featured PRs 설정 파일 경로 | `./featured-prs.json` |
 | `LOCALE` | 날짜 표시 로케일 (BCP 47, 예: `ko-KR`, `ja-JP`) | `en-US` |
-| `WIDTH` | SVG 너비 (픽셀) | `480` |
+| `WIDTH` | SVG 너비 (픽셀, 최소 `400`, 그 미만이면 자동 clamp) | `480` |
 | `HIDE_TITLE` | 헤더(타이틀/통계/점수 배지) 숨김 | `false` |
 | `HIDE_BORDER` | 카드 테두리 선 숨김 | `false` |
 
