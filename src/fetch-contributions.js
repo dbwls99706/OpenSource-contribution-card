@@ -1,7 +1,7 @@
 /**
  * GitHub API를 사용하여 외부 레포에 merged된 PR 목록을 가져옴
  *
- * @source https://github.com/dbwls99706/oss-contribution-card
+ * @source https://github.com/dbwls99706/OpenSource-contribution-card
  */
 
 import https from 'https';
@@ -113,6 +113,7 @@ async function fetchAvatarAsBase64(url) {
     const buffer = await httpsGet(url, {}, 2, true);
     return `data:image/png;base64,${buffer.toString('base64')}`;
   } catch (err) {
+    console.warn(`Warning: Failed to fetch avatar ${url}: ${err.message}`);
     return null;
   }
 }
@@ -140,25 +141,43 @@ export async function fetchContributions(username, token = null, options = {}) {
 
   // 자신의 레포를 제외한 merged PR만 검색
   const query = encodeURIComponent(`author:${sanitizedUsername} type:pr is:merged -user:${sanitizedUsername}`);
-  const url = `https://api.github.com/search/issues?q=${query}&per_page=100&sort=updated`;
 
-  let data;
-  try {
-    data = await httpsGet(url, headers);
-  } catch (err) {
-    throw new Error(`Failed to fetch contributions: ${err.message}`);
-  }
+  // GitHub Search API는 최대 1000개 결과(10페이지 × 100)까지 지원
+  const PER_PAGE = 100;
+  const MAX_PAGES = 10;
+  const allItems = [];
+  let searchTotalCount = 0;
 
-  // 응답 데이터 검증
-  if (!data || typeof data !== 'object') {
-    throw new Error('Invalid response from GitHub API');
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const url = `https://api.github.com/search/issues?q=${query}&per_page=${PER_PAGE}&page=${page}&sort=updated`;
+
+    let data;
+    try {
+      data = await httpsGet(url, headers);
+    } catch (err) {
+      throw new Error(`Failed to fetch contributions: ${err.message}`);
+    }
+
+    // 응답 데이터 검증
+    if (!data || typeof data !== 'object') {
+      throw new Error('Invalid response from GitHub API');
+    }
+
+    if (page === 1) {
+      searchTotalCount = data.total_count || 0;
+    }
+
+    const pageItems = Array.isArray(data.items) ? data.items : [];
+    allItems.push(...pageItems);
+
+    // 마지막 페이지(전체보다 적게 받으면 더 가져올 게 없음)
+    if (pageItems.length < PER_PAGE) break;
   }
 
   // 레포별로 그룹화
   const repoMap = new Map();
-  const items = Array.isArray(data.items) ? data.items : [];
 
-  for (const item of items) {
+  for (const item of allItems) {
     // 필수 필드 검증
     if (!item || !item.repository_url) {
       continue;
@@ -230,9 +249,15 @@ export async function fetchContributions(username, token = null, options = {}) {
     repo.avatarBase64 = await fetchAvatarAsBase64(repo.avatarUrl);
   }));
 
+  // totalPRs는 필터링 이후 실제 카운트로 계산 (include/exclude org가 있을 때도 카드 값과 일치시킴)
+  // 필터가 없고 결과가 1000개 제한에 도달하지 않은 경우엔 searchTotalCount와 동일
+  const hasOrgFilter = includeOrgs.length > 0 || excludeOrgs.length > 0;
+  const filteredTotalPRs = contributions.reduce((sum, r) => sum + r.prs.length, 0);
+  const totalPRs = hasOrgFilter ? filteredTotalPRs : Math.max(filteredTotalPRs, searchTotalCount);
+
   return {
     username: sanitizedUsername,
-    totalPRs: data.total_count || 0,
+    totalPRs,
     totalRepos: contributions.length,
     contributions
   };

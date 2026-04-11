@@ -1,7 +1,7 @@
 /**
  * GitHub 기여 데이터를 SVG 카드로 생성
  *
- * @source https://github.com/dbwls99706/oss-contribution-card
+ * @source https://github.com/dbwls99706/OpenSource-contribution-card
  */
 
 const themes = {

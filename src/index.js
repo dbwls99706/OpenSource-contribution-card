@@ -3,7 +3,7 @@
 /**
  * OSS Contribution Card - GitHub 프로필에 오픈소스 기여 내역 표시
  *
- * @source https://github.com/dbwls99706/oss-contribution-card
+ * @source https://github.com/dbwls99706/OpenSource-contribution-card
  */
 
 import { fetchContributions, fetchFeaturedPRs } from './fetch-contributions.js';
