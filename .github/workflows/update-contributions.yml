@@ -56,3 +56,12 @@ jobs:
           git add contributions*.svg
           git diff --staged --quiet || git commit -m "chore: update contributions SVG [skip ci]"
           git push
+
+      - name: Keepalive workflow (prevent 60-day auto-disable)
+        if: github.event_name == 'schedule'
+        uses: gautamkrishnar/keepalive-workflow@v2.0.10
+        with:
+          time_elapsed: '45'
+          commit_message: 'chore: keepalive [skip ci]'
+          committer_username: 'github-actions[bot]'
+          committer_email: 'github-actions[bot]@users.noreply.github.com'

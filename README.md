@@ -18,6 +18,7 @@ Only shows **merged PRs** to projects you don't own.
 
 - **External contributions only** - Excludes your own repos, shows only merged PRs to other projects
 - **Auto-update** - Automatically refreshed daily via GitHub Actions
+- **Keepalive protection** - Prevents GitHub from auto-disabling the scheduled workflow after 60 days of inactivity
 - **5 themes** - `light`, `dark`, `nord`, `dracula`, `tokyo`
 - **Auto theme detection** - Automatically switches colors based on GitHub light/dark mode
 - **PR numbers** - Each card displays the PR number (e.g., #1492)
@@ -287,6 +288,17 @@ GitHub Actions (runs automatically daily)
 - GitHub caches images, so there may be a delay of **up to 5-10 minutes** after the SVG is updated
 - Try a hard refresh (Ctrl+Shift+R / Cmd+Shift+R)
 - If it still doesn't show, wait a moment and check again
+
+### Workflow was auto-disabled after 60 days
+
+GitHub automatically disables scheduled workflows in repositories with no activity for 60 days. This template now includes a keepalive step that creates an empty commit every ~45 days to prevent this, but if your workflow was already disabled:
+
+1. Go to the **Actions** tab in your profile repository
+2. Click **Update Contributions SVG** in the left sidebar
+3. Click **Enable workflow** at the top
+4. (Optional) Click **Run workflow** to trigger it immediately
+
+To prevent recurrence, make sure your copy of `.github/workflows/update-contributions.yml` contains the latest `Keepalive workflow` step from this template.
 
 ---
 
