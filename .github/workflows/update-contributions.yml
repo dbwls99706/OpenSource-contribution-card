@@ -59,9 +59,21 @@ jobs:
 
       - name: Keepalive workflow (prevent 60-day auto-disable)
         if: github.event_name == 'schedule'
-        uses: gautamkrishnar/keepalive-workflow@v2.0.10
-        with:
-          time_elapsed: '45'
-          commit_message: 'chore: keepalive [skip ci]'
-          committer_username: 'github-actions[bot]'
-          committer_email: 'github-actions[bot]@users.noreply.github.com'
+        run: |
+          # GitHub auto-disables scheduled workflows after 60 days of inactivity.
+          # If no commit has landed in 45+ days, push an empty commit to reset
+          # the counter. Implemented inline (no third-party action) so it works
+          # even when the repo restricts which Actions can be downloaded.
+          LAST_COMMIT_TIME=$(git log -1 --format=%ct)
+          NOW=$(date +%s)
+          DAYS_SINCE=$(( (NOW - LAST_COMMIT_TIME) / 86400 ))
+          echo "Days since last commit: $DAYS_SINCE"
+          if [ "$DAYS_SINCE" -ge 45 ]; then
+            git config --local user.email "github-actions[bot]@users.noreply.github.com"
+            git config --local user.name "github-actions[bot]"
+            git commit --allow-empty -m "chore: keepalive [skip ci]"
+            git push
+            echo "Pushed keepalive empty commit"
+          else
+            echo "No keepalive needed (under 45-day threshold)"
+          fi
