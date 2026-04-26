@@ -1,4 +1,4 @@
-<svg width="480" height="296" viewBox="0 0 480 296" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="403" viewBox="0 0 480 403" xmlns="http://www.w3.org/2000/svg">
   
     <style>
       @keyframes fadeIn {
@@ -13,6 +13,8 @@
       .card-1 { animation-delay: 0.1s; }
       .card-2 { animation-delay: 0.2s; }
       .card-3 { animation-delay: 0.30000000000000004s; }
+      .card-4 { animation-delay: 0.4s; }
+      .card-5 { animation-delay: 0.5s; }
       
     </style>
   
@@ -23,7 +25,7 @@
         <stop offset="100%" style="stop-color:#24283b"/>
       </linearGradient>
     </defs>
-    <rect width="480" height="296" fill="url(#bgGrad)" rx="16"/>
+    <rect width="480" height="403" fill="url(#bgGrad)" rx="16"/>
   
   
     <g transform="translate(18, 23)">
@@ -33,13 +35,13 @@
       <g transform="translate(0, 26)">
         <svg width="16" height="16" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>
         <text x="20" y="12" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#9ece6a">
-          4 PRs Merged · 4 Repos
+          45 PRs Merged · 4 Repos
         </text>
       </g>
       <g transform="translate(364, 5)">
         <rect width="80" height="24" rx="12" fill="#9ece6a"/>
         <text x="40" y="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="800" fill="#1a1b26" text-anchor="middle">
-          Score: 120
+          Score: 530
         </text>
       </g>
     </g>
@@ -65,12 +67,12 @@
           FriendsHackaton/...
         </text>
         <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
-          #1
+          #153
         </text>
 
         <!-- PR Title -->
         <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
-          chore: P0 핵심 의존성 설치
+          feat: 총 수익률 견고화 + 로그아웃...
         </text>
 
         <!-- Contribution Type Badge -->
@@ -102,20 +104,20 @@
             </clipPath>
           </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-1)"/>
+          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-1)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
         <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#c0caf5">
-          ros2/rclcpp
+          FriendsHackaton/...
         </text>
         <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
-          #3047
+          #152
         </text>
 
         <!-- PR Title -->
         <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
-          Add library dependency...
+          feat: 거래 중단 시 약간의 패널티 ...
         </text>
 
         <!-- Contribution Type Badge -->
@@ -130,7 +132,7 @@
         <g transform="translate(85, 70)">
           <svg width="12" height="12" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
           <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
-            Feb 2, 2026
+            Apr 26, 2026
           </text>
         </g>
       </g>
@@ -147,20 +149,20 @@
             </clipPath>
           </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-2)"/>
+          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-2)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
         <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#c0caf5">
-          ros2/rclpy
+          FriendsHackaton/...
         </text>
         <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
-          #1492
+          #151
         </text>
 
         <!-- PR Title -->
         <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
-          Fix: deadlock when cal...
+          fix: handleStop에 isDbI...
         </text>
 
         <!-- Contribution Type Badge -->
@@ -175,7 +177,7 @@
         <g transform="translate(85, 70)">
           <svg width="12" height="12" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
           <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
-            Oct 2, 2025
+            Apr 26, 2026
           </text>
         </g>
       </g>
@@ -192,20 +194,20 @@
             </clipPath>
           </defs>
           <circle cx="14" cy="14" r="14" fill="#2d3348"/>
-          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-3)"/>
+          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-3)"/>
         </g>
 
         <!-- Repo Name & PR Number -->
         <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#c0caf5">
-          ros2/rosbag2
+          FriendsHackaton/...
         </text>
         <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
-          #2135
+          #150
         </text>
 
         <!-- PR Title -->
         <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
-          Fix: Add null pointer ...
+          debug: stopTodo 400 + ...
         </text>
 
         <!-- Contribution Type Badge -->
@@ -220,7 +222,97 @@
         <g transform="translate(85, 70)">
           <svg width="12" height="12" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
           <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
-            Aug 14, 2025
+            Apr 26, 2026
+          </text>
+        </g>
+      </g>
+    
+      <g transform="translate(18, 290)" class="card card-4">
+        <!-- Card Background -->
+        <rect width="205" height="95" rx="12" fill="#2d3348"/>
+
+        <!-- Repo Icon -->
+        <g transform="translate(14, 14)">
+          <defs>
+            <clipPath id="circleView-4">
+              <circle cx="14" cy="14" r="14"/>
+            </clipPath>
+          </defs>
+          <circle cx="14" cy="14" r="14" fill="#2d3348"/>
+          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-4)"/>
+        </g>
+
+        <!-- Repo Name & PR Number -->
+        <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#c0caf5">
+          FriendsHackaton/...
+        </text>
+        <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
+          #149
+        </text>
+
+        <!-- PR Title -->
+        <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
+          fix: 레거시 mock id 가드 + ...
+        </text>
+
+        <!-- Contribution Type Badge -->
+        <g transform="translate(14, 70)">
+          <rect width="65" height="18" rx="4" fill="#9ece6a"/>
+          <text x="32.5" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1a1b26" text-anchor="middle">
+            Merged
+          </text>
+        </g>
+
+        <!-- Date -->
+        <g transform="translate(85, 70)">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+          <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
+            Apr 26, 2026
+          </text>
+        </g>
+      </g>
+    
+      <g transform="translate(235, 290)" class="card card-5">
+        <!-- Card Background -->
+        <rect width="205" height="95" rx="12" fill="#2d3348"/>
+
+        <!-- Repo Icon -->
+        <g transform="translate(14, 14)">
+          <defs>
+            <clipPath id="circleView-5">
+              <circle cx="14" cy="14" r="14"/>
+            </clipPath>
+          </defs>
+          <circle cx="14" cy="14" r="14" fill="#2d3348"/>
+          <image href="data:image/png;base64,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" x="0" y="0" width="28" height="28" clip-path="url(#circleView-5)"/>
+        </g>
+
+        <!-- Repo Name & PR Number -->
+        <text x="50" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#c0caf5">
+          FriendsHackaton/...
+        </text>
+        <text x="50" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="500" fill="#7aa2f7">
+          #148
+        </text>
+
+        <!-- PR Title -->
+        <text x="50" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" fill="#565f89">
+          debug: stopTodo 400 + ...
+        </text>
+
+        <!-- Contribution Type Badge -->
+        <g transform="translate(14, 70)">
+          <rect width="65" height="18" rx="4" fill="#9ece6a"/>
+          <text x="32.5" y="13" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#1a1b26" text-anchor="middle">
+            Merged
+          </text>
+        </g>
+
+        <!-- Date -->
+        <g transform="translate(85, 70)">
+          <svg width="12" height="12" viewBox="0 0 20 20" fill="#9ece6a"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+          <text x="16" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#565f89">
+            Apr 26, 2026
           </text>
         </g>
       </g>
