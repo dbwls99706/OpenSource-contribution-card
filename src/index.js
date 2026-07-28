@@ -3,7 +3,7 @@
 /**
  * OSS Contribution Card - GitHub 프로필에 오픈소스 기여 내역 표시
  *
- * @source https://github.com/dbwls99706/oss-contribution-card
+ * @source https://github.com/dbwls99706/OpenSource-contribution-card
  */
 
 import { fetchContributions, fetchFeaturedPRs } from './fetch-contributions.js';
@@ -90,6 +90,10 @@ async function main() {
   const featuredPrsPath = process.env.FEATURED_PRS_PATH || './featured-prs.json';
   const useMock = process.env.USE_MOCK === 'true' || process.argv.includes('--mock');
   const previewThemes = process.env.PREVIEW_THEMES ? process.env.PREVIEW_THEMES.split(',').map(s => s.trim()).filter(Boolean) : [];
+  const locale = process.env.LOCALE || 'en-US';
+  const svgWidth = parseInt(process.env.WIDTH || '480', 10);
+  const hideTitle = process.env.HIDE_TITLE === 'true';
+  const hideBorder = process.env.HIDE_BORDER === 'true';
 
   if (!username) {
     console.error('Error: GitHub username is required.');
@@ -150,9 +154,10 @@ async function main() {
     }
 
     // SVG 생성
+    const svgOptions = { theme, autoTheme, maxRepos, title, sortBy, monthsAgo, locale, width: svgWidth, hideTitle, hideBorder };
     const svg = data.totalRepos > 0
-      ? generateSVG(data, { theme, autoTheme, maxRepos, title, sortBy, monthsAgo })
-      : generateEmptySVG(username, { theme, autoTheme, title });
+      ? generateSVG(data, svgOptions)
+      : generateEmptySVG(username, { theme, autoTheme, width: svgWidth, title });
 
     // 출력 디렉토리 생성 (필요시)
     const outputDir = dirname(outputPath);
@@ -168,9 +173,10 @@ async function main() {
     if (previewThemes.length > 0) {
       console.log(`\nGenerating preview themes: ${previewThemes.join(', ')}`);
       for (const previewTheme of previewThemes) {
+        const previewOptions = { theme: previewTheme, autoTheme: false, maxRepos, title, sortBy, monthsAgo, locale, width: svgWidth, hideTitle, hideBorder };
         const previewSvg = data.totalRepos > 0
-          ? generateSVG(data, { theme: previewTheme, autoTheme: false, maxRepos, title, sortBy, monthsAgo })
-          : generateEmptySVG(username, { theme: previewTheme, autoTheme: false, title });
+          ? generateSVG(data, previewOptions)
+          : generateEmptySVG(username, { theme: previewTheme, autoTheme: false, width: svgWidth, title });
 
         const previewPath = `./contributions-${previewTheme}.svg`;
         writeFileSync(previewPath, previewSvg);

@@ -45,6 +45,10 @@ jobs:
           EXCLUDE_ORGS: ${{ vars.EXCLUDE_ORGS || '' }}
           INCLUDE_ORGS: ${{ vars.INCLUDE_ORGS || '' }}
           FEATURED_PRS_PATH: ${{ vars.FEATURED_PRS_PATH || './featured-prs.json' }}
+          LOCALE: ${{ vars.LOCALE || 'en-US' }}
+          WIDTH: ${{ vars.WIDTH || '480' }}
+          HIDE_TITLE: ${{ vars.HIDE_TITLE || 'false' }}
+          HIDE_BORDER: ${{ vars.HIDE_BORDER || 'false' }}
           OUTPUT_PATH: './contributions.svg'
           PREVIEW_THEMES: 'dark'
         run: node src/index.js

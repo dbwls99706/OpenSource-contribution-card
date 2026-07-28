@@ -1,5 +1,5 @@
 {
-  "name": "oss-contribution-card",
+  "name": "opensource-contribution-card",
   "version": "1.0.0",
   "description": "Display your open-source contributions on GitHub profile README",
   "type": "module",
@@ -22,11 +22,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dbwls99706/oss-contribution-card"
+    "url": "git+https://github.com/dbwls99706/OpenSource-contribution-card.git"
   },
   "bugs": {
-    "url": "https://github.com/dbwls99706/oss-contribution-card/issues"
+    "url": "https://github.com/dbwls99706/OpenSource-contribution-card/issues"
   },
+  "homepage": "https://github.com/dbwls99706/OpenSource-contribution-card#readme",
   "engines": {
     "node": ">=18.0.0"
   }

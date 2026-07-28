@@ -94,6 +94,10 @@ Set variables in repository **Settings** → **Secrets and variables** → **Act
 | `EXCLUDE_ORGS` | Orgs/users to exclude (comma-separated) | - |
 | `INCLUDE_ORGS` | Show only these orgs/users (comma-separated) | All |
 | `FEATURED_PRS_PATH` | Path to Featured PRs config file | `./featured-prs.json` |
+| `LOCALE` | Date format locale (BCP 47, e.g. `ko-KR`, `ja-JP`) | `en-US` |
+| `WIDTH` | SVG width in pixels (minimum `400`, clamped if smaller) | `480` |
+| `HIDE_TITLE` | Hide the header (title / stats / score badge) | `false` |
+| `HIDE_BORDER` | Hide the per-card border stroke | `false` |
 
 ### Examples
 
